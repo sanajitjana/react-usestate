@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 
 const App = () => {
-  let newTime = new Date().toLocaleTimeString();
+  //for showing the time at beginning of page reload
+  let newPreTime = new Date().toLocaleTimeString();
+  const [time, setTime] = useState(newPreTime);
 
-  const [count, setCount] = useState(newTime);
-
+  //fetch current time when you click on the button
   const getTime = () => {
-    setCount(count);
+    let newPostTime = new Date().toLocaleTimeString();
+    setTime(newPostTime);
   };
 
   return (
     <>
-      <h1 className="text-center mt-5">React Hooks with useState</h1>
+      <h1 className="text-center mt-5">React - useState</h1>
       <div className="text-center" style={{ marginTop: "30vh" }}>
-        <h1>{count}</h1>
+        <h1>{time}</h1>
         <br />
         <button
           onClick={getTime}
