@@ -23,7 +23,7 @@ const App = () => {
           className="btn btn-primary btn-xl"
           style={{ marginRight: "15px" }}
         >
-          Get Time
+          Get Current Time
         </button>
       </div>
       <h6 className="text-center" style={{ marginTop: "30vh" }}>
