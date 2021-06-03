@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+const App = () => {
+  let newTime = new Date().toLocaleTimeString();
+
+  const [count, setCount] = useState(newTime);
+
+  const getTime = () => {
+    setCount(count);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <h1 className="text-center mt-5">React Hooks with useState</h1>
+      <div className="text-center" style={{ marginTop: "30vh" }}>
+        <h1>{count}</h1>
+        <br />
+        <button
+          onClick={getTime}
+          type="button"
+          className="btn btn-primary btn-xl"
+          style={{ marginRight: "15px" }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Get Time
+        </button>
+      </div>
+      <h6 className="text-center" style={{ marginTop: "30vh" }}>
+        Copyright &copy; 2021 Sanajit Jana. All Rights Reserved.
+      </h6>
+    </>
   );
-}
+};
 
 export default App;
